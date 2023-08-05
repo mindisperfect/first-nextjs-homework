@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none !important;
+  list-style-type: none;
+  scroll-behavior: smooth;
+  transition: all 0.4s ease;
+  font-family: sans-serif;
+  outline: none;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../homework/components/images/bc-img.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+.bc-nav {
+  background-color: blueviolet;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 2px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.card {
+  border: 1px solid purple;
+  background-color: blue;
+  border-radius: 8px;
+}
+
+.rows {
+  margin-bottom: 100px;
+}
+
+.row {
+  border: 1px solid purple;
+  padding: 10px 20px 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.row:hover {
+  box-shadow: 0px 4px 8px 0px purple;
+}
+
+.hr {
+  margin: 20px 0px;
+}
+
+.img-src {
+  width: 100% !important;
+  height: 250px !important;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+  width: 100% !important;
+  color: white;
+  font-size: 20px;
+}
