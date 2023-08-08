@@ -1,17 +1,8 @@
 "use client";
 import Image from "next/image";
-// import { request } from "@/server/request";
 import { Fragment, useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
-
-// async function getLastNews() {
-//   try {
-//     return request("last-products");
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
 
 const Card = () => {
   const [data, setData] = useState(null);
@@ -61,28 +52,50 @@ const Card = () => {
   };
   return (
     <div>
-      <h1 style={{textAlign: "center", fontSize: "30px", marginBottom: "20px", marginTop: "20px", color: "white"}}>New products</h1>
+      <h1
+        style={{
+          textAlign: "center",
+          fontSize: "30px",
+          marginBottom: "20px",
+          marginTop: "20px",
+          color: "white",
+        }}
+      >
+        New products
+      </h1>
       <div className="rows">
-      <Slider {...settings} >
-        {data?.map((pr, i) => (
-          <Fragment key={i}>
-            <div className="row">
-              <Image src={pr?.images.url} alt={pr?.title} width={200} height={150} style={{width: "100%", height: "150"}} />
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }} >
-                <h1>{pr?.title}</h1>
-                <h3>
-                  <b>Price: </b>
-                  {pr?.price} uzs
-                </h3>
-              </div>
-              <p>{pr?.description}</p>
-              <h4>
-                <b>Sold:</b> {pr?.sold}
-              </h4>
-            </div>
-          </Fragment>
-        ))}
-      </Slider>
+        <Slider {...settings}>
+          {data?.map((pr, i) => (
+            <Fragment key={i}>
+              <div className="row">
+                <Image
+                  src={pr?.image.url}
+                  alt={pr?.title}
+                  width={200}
+                  height={150}
+                  style={{ width: "100%", height: "280px" }}
+                />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",  
+                    }}
+                  >
+                    <h1>{pr?.title}</h1>
+                    <h3>
+                      <b>Price: </b>
+                      {pr?.price} uzs
+                    </h3>
+                  </div>
+                  <p>{pr?.description}</p>
+                  <h4>
+                    <b>Sold:</b> {pr?.sold}
+                  </h4>
+                </div>
+            </Fragment>
+          ))}
+        </Slider>
       </div>
     </div>
   );

@@ -1,6 +1,18 @@
-import { Fragment } from "react";
+"use client"
+
+import { useRouter } from 'next/navigation';
+import { Fragment, useEffect,  } from "react";
+import { useSelector } from 'react-redux';
 
 export default function PrivateLayout({ children }) {
+  const router = useRouter();
+  const { user, isAuth} = useSelector(state => state.auth);
+  useEffect(() => {
+    if (!(user?.role && isAuth)) {
+      router.push('/login');
+    }
+  })
+  console.log(user, isAuth);
   return (
     <Fragment>
       <header>Admin header</header>
